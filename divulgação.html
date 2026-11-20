@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VanSegura - Transporte Escolar Profissional</title>
+<style>
+*{box-sizing:border-box;font-family:'Segoe UI',Arial}body{margin:0;background:#F8FAFC;color:#1E293B}
+.topbar{background:#0B2C4A;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.topbar b{font-size:18px}.topbar a{background:#0F9D58;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:700}
+.hero{background:linear-gradient(135deg,#0B2C4A,#1A73E8);color:#fff;padding:36px 18px 28px;text-align:center}
+.hero .badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600}
+.hero h1{font-size:34px;line-height:1.1;margin:16px 0 10px;font-weight:800}
+.hero p{opacity:.9;font-size:16px;line-height:1.5;margin:0}
+.btn{display:block;width:100%;padding:16px;border:none;border-radius:14px;font-weight:800;font-size:16px;margin-top:12px;cursor:pointer;text-decoration:none;text-align:center}
+.green{background:#0F9D58;color:#fff}.white{background:#fff;color:#0B2C4A}.whats{background:#25D366;color:#fff}.dark{background:#0B2C4A;color:#fff}
+.small{font-size:12px;opacity:.8;margin-top:8px;text-align:center}
+.wrap{max-width:520px;margin:0 auto;padding:0 4px 20px}
+.card{background:#fff;border-radius:18px;padding:20px;margin:14px 12px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid #E2E8F0}
+.card h2{font-size:20px;margin:0 0 14px;text-align:center}
+.trust{display:flex;justify-content:space-between;text-align:center;margin:16px 12px;background:#fff;padding:14px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.trust b{font-size:18px;color:#0B2C4A;display:block}.trust span{font-size:11px;color:#64748B}
+.item{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
+.icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:#DBEAFE}
+.item b{font-size:15px}.item small{color:#64748B;font-size:13px;line-height:1.4}
+.depo{background:#F8FAFC;border:1px solid #E2E8F0;padding:14px;border-radius:14px;margin:10px 0}
+.steps{background:#0B2C4A;color:#fff;border-radius:18px;padding:20px;margin:14px 12px}
+.steps h2{text-align:center;margin:0 0 12px}.steps p{line-height:1.8;font-size:14px}.steps b{color:#FACC15}
+.price{background:#fff;border:2px solid #0F9D58;border-radius:18px;padding:20px;margin:14px 12px;text-align:center}
+.price .val{font-size:38px;font-weight:800;color:#0B2C4A}
+.price2{background:#0B2C4A;color:#fff;border-radius:18px;padding:20px;margin:14px 12px;text-align:center}
+.price2 .val{font-size:32px;font-weight:800}
+.faq b{display:block;margin-top:12px;font-size:14px}.faq p{margin:4px 0 0;color:#64748B;font-size:13px;line-height:1.5}
+.footer{text-align:center;color:#94A3B8;font-size:12px;padding:16px}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+.modal.aberto{display:flex}
+.modal-box{background:#fff;width:100%;max-width:420px;border-radius:20px;padding:22px;text-align:center;max-height:90vh;overflow:auto}
+.modal-box h2{margin:8px 0}.modal-box p{color:#64748B;font-size:14px;line-height:1.6}
+.info{text-align:left;background:#F8FAFC;border-radius:12px;padding:14px;margin:12px 0;font-size:14px;line-height:1.7}
+.info b{color:#0B2C4A}
+.loader{width:50px;height:50px;border:4px solid #E2E8F0;border-top:4px solid #0F9D58;border-radius:50%;margin:16px auto;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><b>VanSegura</b><a href="#" onclick="abrirObrigado();return false;">TESTAR GRÁTIS</a></div>
+
+<div class="wrap">
+<div class="hero">
+<span class="badge">MAIS DE 120 MOTORISTAS USANDO</span>
+<h1>Transporte escolar organizado, sem caderno e sem stress</h1>
+<p>Controle rota, pagamento e avise os pais automaticamente. Tudo pelo celular.</p>
+<button class="btn green" onclick="abrirObrigado()">TESTAR 7 DIAS GRÁTIS</button>
+<button class="btn white" onclick="abrirEspecialista()">FALAR COM ESPECIALISTA</button>
+<p class="small">Sem cartão - Sem compromisso - Libera na hora</p>
+</div>
+
+<div class="trust">
+<div><b>120+</b><span>Motoristas</span></div>
+<div><b>3.200+</b><span>Alunos</span></div>
+<div><b>4.9</b><span>Avaliação</span></div>
+<div><b>100%</b><span>Seguro</span></div>
+</div>
+
+<div class="card">
+<h2>Você ainda controla no caderno?</h2>
+<div class="item"><div class="icon">!</div><div><b>Medo de esquecer uma criança</b><br><small>Um único erro pode acabar com sua reputação e seu trabalho.</small></div></div>
+<div class="item"><div class="icon">R$</div><div><b>Não sabe quem pagou</b><br><small>Folha rasga, some, e no fim do mês você fica no prejuízo.</small></div></div>
+<div class="item"><div class="icon">...</div><div><b>Mãe ligando no meio da rota</b><br><small>Você dirigindo e tendo que responder "já chegou?" toda hora.</small></div></div>
+</div>
+
+<div class="card">
+<h2>Tudo que você precisa, em 1 app</h2>
+<div class="item"><div class="icon">✓</div><div><b>Check-in inteligente da rota</b><br><small>Embarcou, chegou na escola, entregue em casa.</small></div></div>
+<div class="item"><div class="icon">R$</div><div><b>Controle de pagamento</b><br><small>Veja na hora quem pagou e quem está devendo.</small></div></div>
+<div class="item"><div class="icon">W</div><div><b>Cobrança em 1 clique</b><br><small>Aperta COBRAR e o WhatsApp já abre com a mensagem pronta.</small></div></div>
+<div class="item"><div class="icon">M</div><div><b>Link da Mãe</b><br><small>A mãe acompanha sozinha. Ela para de te ligar.</small></div></div>
+</div>
+
+<div class="steps">
+<h2>Comece em 3 passos</h2>
+<p><b>1.</b> Clique em TESTAR GRÁTIS e crie sua conta em 1 minuto<br>
+<b>2.</b> Cadastre seus alunos, leva só 5 minutos<br>
+<b>3.</b> Use 7 dias grátis na sua rota de verdade</p>
+</div>
+
+<div class="card">
+<h2>Quem testou, não volta pro caderno</h2>
+<div class="depo"><b>★★★★★ "Testei 7 dias grátis e no 3º dia já assinei."</b><br><small>Carlos M. - Osasco - SP - 32 alunos</small></div>
+<div class="depo"><b>★★★★★ "As mães amaram o link. Minha rota ficou mais tranquila."</b><br><small>Fernanda L. - Itapevi - SP - 24 alunos</small></div>
+</div>
+
+<div class="price">
+<h3>PLANO MENSAL</h3>
+<div class="val">R$ 39,90<span style="font-size:16px">/mês</span></div>
+<p style="font-size:14px">Menos de R$ 1,33 por dia</p>
+<button class="btn green" onclick="abrirObrigado()">COMEÇAR TESTE GRÁTIS</button>
+</div>
+
+<div class="price2">
+<h3 style="margin:8px 0">VITALÍCIO</h3>
+<div class="val">R$ 397 <span style="font-size:16px">uma única vez</span></div>
+<p style="opacity:.8;font-size:14px">Paga uma vez, usa pra sempre.</p>
+<a class="btn white" href="https://wa.me/5515997643116?text=Oi!%20Quero%20o%20VanSegura%20Vital%C3%ADcio%20R$197">QUERO O VITALÍCIO R$ 197</a>
+</div>
+
+<div class="card faq">
+<h2>Perguntas frequentes</h2>
+<b>Preciso baixar aplicativo?</b><p>Tem 2 opção. Abre direto no celular, no Chrome ou se preferir abaixar o app.</p>
+<b>Como pago depois dos 7 dias?</b><p>Pix. Chave: 60723226000142. Manda o comprovante no WhatsApp e libero na hora.</p>
+<b>E se eu não gostar?</b><p>Nos 7 dias grátis você não paga nada.</p>
+</div>
+
+<div class="card" style="text-align:center">
+<h2>Pronto pra organizar sua van hoje?</h2>
+<button class="btn green" onclick="abrirObrigado()">QUERO MEUS 7 DIAS GRÁTIS</button>
+<button class="btn whats" onclick="abrirEspecialista()">FALAR COM ESPECIALISTA</button>
+<p class="small" style="color:#64748B">Suporte: 15 99764-3116</p>
+</div>
+</div>
+<div class="footer">© 2026 VanSegura - Feito para motoristas de verdade - Cotia - SP</div>
+
+<!-- TELA FALAR COM ESPECIALISTA - SEM PLANO E SEM PIX -->
+<div id="modalEsp" class="modal">
+<div class="modal-box">
+<div style="font-size:48px">🚌</div>
+<h2>VanSegura</h2>
+<p><b>Transporte Escolar Profissional</b><br>Feito por quem vive a rota todos os dias.</p>
+<div class="info">
+<b>Atendimento direto:</b><br>
+WhatsApp: 15 99764-3116<br>
+Horário: Seg a Sáb, 7h às 19h<br><br>
+<b>O que está incluso:</b><br>
+- 7 dias grátis para testar<br>
+- Rota, pagamento e Link da Mãe<br>
+- Suporte direto com o criador do app<br>
+- Sem fidelidade, cancele quando quiser
+</div>
+<a class="btn whats" href="https://wa.me/5515997643116?text=Oi!%20Quero%20falar%20com%20o%20especialista%20do%20VanSegura">CHAMAR NO WHATSAPP AGORA</a>
+<button class="btn dark" onclick="fecharEspecialista()">VOLTAR</button>
+</div>
+</div>
+
+<!-- TELA OBRIGADO -->
+<div id="modalObrigado" class="modal">
+<div class="modal-box">
+<div style="font-size:52px">🎉</div>
+<h2>Obrigado por testar o VanSegura!</h2>
+<p>Você está sendo levado para o app agora...<br><br>
+<b>Seu teste de 7 dias grátis já está liberado!</b><br>
+Crie sua conta e cadastre seu primeiro aluno.</p>
+<div class="loader"></div>
+<p id="contador" style="font-weight:bold;color:#0B2C4A">Levando em 3...</p>
+<p style="font-size:12px">Se não abrir sozinho, clique abaixo:</p>
+<a class="btn green" href="https://vansegura3.netlify.app">IR PARA O APP AGORA</a>
+</div>
+</div>
+
+<script>
+function abrirEspecialista(){document.getElementById('modalEsp').classList.add('aberto');}
+function fecharEspecialista(){document.getElementById('modalEsp').classList.remove('aberto');}
+function abrirObrigado(){
+  document.getElementById('modalObrigado').classList.add('aberto');
+  let n=3;
+  document.getElementById('contador').innerText='Levando em '+n+'...';
+  let t=setInterval(function(){
+    n--; 
+    if(n>0){document.getElementById('contador').innerText='Levando em '+n+'...';}
+    else{clearInterval(t); window.location.href='https://vansegura3.netlify.app';}
+  },1000);
+}
+document.getElementById('modalEsp').addEventListener('click',function(e){if(e.target==this) fecharEspecialista();});
+</script>
+</body>
+</html>
